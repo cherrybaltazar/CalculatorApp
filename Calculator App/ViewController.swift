@@ -36,8 +36,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOne: UIButton!
     @IBOutlet weak var btnZero: UIButton!
     
-    var arrSymbols = ["AC","+/-","%","/","x","-","+","=","."]
-    
+    var arrSymbols = ["AC","=","+/-","%","/","x","-","+","."]
+    var arrCollectedStrings = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -48,34 +48,55 @@ class ViewController: UIViewController {
         
        
         if txtViewResult.text.isEmpty {
-            //Display the numbers
-            txtViewResult.text = sender.titleLabel?.text
+            //Clear all the collections in array and display a number in the first element of array
+            arrCollectedStrings.removeAll()
+            arrCollectedStrings.append((sender.titleLabel?.text)!)
+            txtViewResult.text = arrCollectedStrings[0]
             
-            //Checks the screen if it contains a symbol
+              //It checks the collected string if it is a number or a symbol. If it is a symbol it will proceed. If the symbol is a point, it will insert 0 in the first element of array. Otherwise, it will clear the screen.
             for symbol in arrSymbols {
-                if txtViewResult.text == symbol {
-                    //Check if it is equal to ".", it displays "0."
-                    txtViewResult.text = txtViewResult.text == arrSymbols[8] ? "0." : ""
-                }
-            }
-         
-        } else {
-            //Clears the screen if the symbol is AC
-            if sender.titleLabel?.text == arrSymbols[0] {
-                txtViewResult.text = ""
-            } else {
-                txtViewResult.text.append((sender.titleLabel?.text)!)
-                for symbol in arrSymbols {
-                    if txtViewResult.text.contains(symbol) {
-                        txtViewResult.text = txtViewResult.text.contains(".") || txtViewResult.text.contains("=") ? "0." : ""
+                if arrCollectedStrings.last == symbol {
+                    if arrCollectedStrings.last == arrSymbols.last {
+                        arrCollectedStrings.insert("0", at: 0)
+                        txtViewResult.text = arrCollectedStrings.joined()
+                    } else {
+                        arrCollectedStrings.removeAll()
+                        txtViewResult.text = ""
                     }
                 }
             }
             
-          
+        } else {
+            //Clears the screen if the symbol is AC
+            if sender.titleLabel?.text == arrSymbols.first {
+                arrCollectedStrings.removeAll()
+                txtViewResult.text = ""
+            } else if (arrCollectedStrings.last != nil) {
+                arrCollectedStrings.append((sender.titleLabel?.text)!)
+                txtViewResult.text = arrCollectedStrings.joined()
+                
+                //Checks if the symbol is the same with a point or equal, it will remove the last element if the point has been tapped
+                if (arrSymbols.last == arrCollectedStrings.last) || arrCollectedStrings.last == arrSymbols[1] {
+                    arrCollectedStrings.removeLast()
+                    
+                    if (arrSymbols[1] == sender.titleLabel?.text) {
+                         arrCollectedStrings.removeLast()
+                    }
+                    
+                    txtViewResult.text = arrCollectedStrings.joined()
+                //Checks if the symbol is +/- or %, it will display zero
+                } else if (arrSymbols[2] == sender.titleLabel?.text || arrSymbols[3] == sender.titleLabel?.text) {
+                    arrCollectedStrings.removeAll()
+                    arrCollectedStrings.insert("0", at: 0)
+                    txtViewResult.text = arrCollectedStrings.joined()
+                }
+            } else {
+                //Checks the point symbol if it exist on the screen when you first open the app
+                if (sender.titleLabel?.text == arrSymbols.last) {
+                    arrCollectedStrings.insert("0" + (sender.titleLabel?.text)!, at: 0)
+                    txtViewResult.text = arrCollectedStrings.joined()
+                }
+            }
         }
-        
     }
-    
-  
 }
