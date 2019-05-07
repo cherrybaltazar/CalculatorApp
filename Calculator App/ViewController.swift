@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSubtract: UIButton!
     @IBOutlet weak var btnAdd: UIButton!
    
-    
     //Numbers
     @IBOutlet weak var btnNine: UIButton!
     @IBOutlet weak var btnEight: UIButton!
@@ -43,6 +42,7 @@ class ViewController: UIViewController {
     var secondOperand = Double()
     var operatorValue = String()
     var arrCollectedStrings = [String]()
+    var percentValue = Double()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -81,59 +81,86 @@ class ViewController: UIViewController {
                 txtViewResult.text = ""
             } else {
                 //OPERATORS
-                if (arrOperators.contains((sender.titleLabel?.text)!)){
-                    print(arrCollectedStrings, "= nil( /, x, - +)")
+                if arrOperators.contains((sender.titleLabel?.text)!) {
+                    print(arrCollectedStrings, "OPERATOR")
+                    firstOperand = operand(sender: sender, firstOpernd: Double(arrCollectedStrings.joined()) ?? firstOperand)
                     operatorValue = (sender.titleLabel?.text)!
-                    //ADD VALUE TO FIRST OPERAND
-                    if sender.tag <= 1  {
-                        firstOperand = Double(arrCollectedStrings.joined()) ?? 0
-                        txtViewResult.text = String(firstOperand)
-                        arrCollectedStrings.removeAll()
-                        print(firstOperand, "FIRST OPERAND")
-                        sender.tag = 1
-                    }
-                  
+                
+
                 //EQUALS
-                } else if (sender.tag <= 2 && arrSymbols[1] == sender.titleLabel?.text) {
+                } else if sender.tag <= 2 && arrSymbols[1] == sender.titleLabel?.text  {
                     //ADD VALUE TO SECOND OPERAND
-                    secondOperand = Double(arrCollectedStrings.joined())!
-                   
-                    switch operatorValue {
-                    //DIVIDE
-                    case arrOperators.first:
-                        result = Double(firstOperand) / Double(arrCollectedStrings.joined())!
-                        print(String(result), "DIVIDE")
-                    //MULTIPLY
-                    case arrOperators[1]:
-                        result = Double(firstOperand) * Double(arrCollectedStrings.joined())!
-                        print(String(result), "MULTIPLY")
-                    //SUBTRACT
-                    case arrOperators[2]:
-                        result = Double(firstOperand) - Double(arrCollectedStrings.joined())!
-                        print(String(result), "SUBTRACT")
-                    //ADDITION
-                    case arrOperators[3]:
-                        result = firstOperand + secondOperand
-                        print(String(result), "ADD")
-                    default:
-                       // txtViewResult.text = arrCollectedStrings.joined()
-                        print(String(result), "NONE")
-                    }
-                    secondOperand = firstOperand
-                    firstOperand = result
-                    txtViewResult.text = String(result)
+                txtViewResult.text = performOperation(sender: sender)
                     sender.tag = 2
                     
+                //PERCENTAGE
+                } else if arrSymbols[3] == sender.titleLabel?.text {
+                    //STORE THE VALUE OF THE PERCENT
+                    if arrOperators.contains(operatorValue) {
+                        percentValue = Double(arrCollectedStrings.joined()) ?? 0
+                        percentValue = percentValue / 100
+                    }
+                    firstOperand = operand(sender: sender, firstOpernd: arrOperators.contains(operatorValue) ? firstOperand : Double(arrCollectedStrings.joined()) ?? firstOperand)
+                    txtViewResult.text = performOperation(sender: sender)
+                    print("PERCENT", firstOperand, operatorValue, result)
                     
                 //NUMBERS & SYMBOLS
                 } else {
                     if sender.tag == 0 {
-                    arrCollectedStrings.append((sender.titleLabel?.text)!)
-                        print("APPEND A NUMBER")
+                        arrCollectedStrings.append((sender.titleLabel?.text)!)
                     }
+                    
                     txtViewResult.text = arrCollectedStrings.joined()
                 }
             }
         }
+    }
+    
+    func operand(sender: UIButton, firstOpernd: Double) -> Double {
+        //ADD VALUE TO FIRST OPERAND
+        if sender.tag <= 1  {
+           // firstOperand = Double(arrCollectedStrings.joined()) ?? 0
+            firstOperand = firstOpernd
+            txtViewResult.text = String(firstOpernd)
+            arrCollectedStrings.removeAll()
+            print("FIRST OPERAND")
+            sender.tag = 1
+        }
+        return firstOpernd
+    }
+    
+    func performOperation (sender: UIButton) -> String {
+        //ADD VALUE TO SECOND OPERAND
+        //ADDED first Operand so it won't get an error msg when tapping the % and = at the same time e.g 100/10% = .1
+        secondOperand = arrSymbols[3] == sender.titleLabel?.text ? percentValue : Double(arrCollectedStrings.joined()) ?? percentValue //100
+        
+        print(secondOperand, "SECOND OPERAND")
+        switch operatorValue {
+        //DIVIDE && PERCENTAGE
+        case arrOperators.first:
+            result = firstOperand / secondOperand
+            print(String(result), "DIVIDE")
+        //MULTIPLY
+        case arrOperators[1]:
+            result = firstOperand * secondOperand
+            print(String(result), "MULTIPLY")
+        //SUBTRACT
+        case arrOperators[2]:
+            result = firstOperand - secondOperand
+            print(String(result), "SUBTRACT")
+        //ADDITION
+        case arrOperators[3]:
+            result = firstOperand + secondOperand
+            print(String(result), "ADD")
+        default:
+            //PERCENT ONLY
+            if sender.titleLabel?.text == arrSymbols[3] {
+                result = firstOperand / 100
+                print(String(result), "PERCENT AT FIRST RUN")
+            }
+        }
+        firstOperand = result
+        print("PERFORM OPERATION", secondOperand, result)
+        return String(result)
     }
 }
