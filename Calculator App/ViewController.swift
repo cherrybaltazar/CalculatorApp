@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     var operatorValue = String()
     var arrCollectedStrings = [String]()
     var percentValue = Double()
+    var negativeCount = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -55,8 +56,8 @@ class ViewController: UIViewController {
             arrCollectedStrings.append((sender.titleLabel?.text)!)
             txtViewResult.text = arrCollectedStrings[0]
             
-              //It checks the collected string if it is a number or a symbol. If it is a symbol it will proceed. If the symbol is a point, it will insert 0 in the first element of array. Otherwise, it will clear the screen.
             if arrSymbols.contains((sender.titleLabel?.text)!) || arrOperators.contains((sender.titleLabel?.text)!) {
+                //POINT
                     if arrCollectedStrings.last == arrSymbols.last {
                         arrCollectedStrings.insert("0", at: 0)
                         txtViewResult.text = arrCollectedStrings.joined()
@@ -81,18 +82,21 @@ class ViewController: UIViewController {
                 txtViewResult.text = ""
             } else {
                 //OPERATORS
-                if arrOperators.contains((sender.titleLabel?.text)!) {
-                    print(arrCollectedStrings, "OPERATOR")
-                    firstOperand = operand(sender: sender, firstOpernd: Double(arrCollectedStrings.joined()) ?? firstOperand)
-                    operatorValue = (sender.titleLabel?.text)!
-                
+                if arrOperators.contains((sender.titleLabel?.text)!)  {
+                    print(" OPERATOR",arrCollectedStrings, firstOperand)
 
+                    firstOperand = operand(sender: sender, firstOpernd: !firstOperand.isZero ? firstOperand : Double(arrCollectedStrings.joined()) ?? firstOperand)
+                
                 //EQUALS
                 } else if sender.tag <= 2 && arrSymbols[1] == sender.titleLabel?.text  {
                     //ADD VALUE TO SECOND OPERAND
-                txtViewResult.text = performOperation(sender: sender)
+                    txtViewResult.text = performOperation(sender: sender)
                     sender.tag = 2
                     
+                //POSITIVE AND NEGATIVE
+                } else if arrSymbols[2] == sender.titleLabel?.text {
+                     txtViewResult.text  = negativeOperation(sender: sender)
+                
                 //PERCENTAGE
                 } else if arrSymbols[3] == sender.titleLabel?.text {
                     //STORE THE VALUE OF THE PERCENT
@@ -101,15 +105,17 @@ class ViewController: UIViewController {
                         percentValue = percentValue / 100
                     }
                     firstOperand = operand(sender: sender, firstOpernd: arrOperators.contains(operatorValue) ? firstOperand : Double(arrCollectedStrings.joined()) ?? firstOperand)
+                    //1 TO DO: CREATE A STORAGE FOR THE PERCENT VALUE SO THAT
+                    //IT WILL NOT CLEAR THE SCREEN WHEN +/- IS TAPPED
+                    arrCollectedStrings.removeAll()
                     txtViewResult.text = performOperation(sender: sender)
-                    print("PERCENT", firstOperand, operatorValue, result)
-                    
-                //NUMBERS & SYMBOLS
+                    print("PERCENT", arrCollectedStrings, firstOperand, operatorValue, result)
                 } else {
+
+                //NUMBERS & SYMBOLS
                     if sender.tag == 0 {
                         arrCollectedStrings.append((sender.titleLabel?.text)!)
                     }
-                    
                     txtViewResult.text = arrCollectedStrings.joined()
                 }
             }
@@ -118,12 +124,11 @@ class ViewController: UIViewController {
     
     func operand(sender: UIButton, firstOpernd: Double) -> Double {
         //ADD VALUE TO FIRST OPERAND
-        if sender.tag <= 1  {
-           // firstOperand = Double(arrCollectedStrings.joined()) ?? 0
+        if sender.tag == 0  {
             firstOperand = firstOpernd
             txtViewResult.text = String(firstOpernd)
             arrCollectedStrings.removeAll()
-            print("FIRST OPERAND")
+            operatorValue = (sender.titleLabel?.text)!
             sender.tag = 1
         }
         return firstOpernd
@@ -131,36 +136,45 @@ class ViewController: UIViewController {
     
     func performOperation (sender: UIButton) -> String {
         //ADD VALUE TO SECOND OPERAND
-        //ADDED first Operand so it won't get an error msg when tapping the % and = at the same time e.g 100/10% = .1
-        secondOperand = arrSymbols[3] == sender.titleLabel?.text ? percentValue : Double(arrCollectedStrings.joined()) ?? percentValue //100
+        secondOperand = arrSymbols[3] == sender.titleLabel?.text ? percentValue : Double(arrCollectedStrings.joined()) ?? percentValue
         
-        print(secondOperand, "SECOND OPERAND")
         switch operatorValue {
-        //DIVIDE && PERCENTAGE
-        case arrOperators.first:
-            result = firstOperand / secondOperand
-            print(String(result), "DIVIDE")
         //MULTIPLY
         case arrOperators[1]:
             result = firstOperand * secondOperand
             print(String(result), "MULTIPLY")
-        //SUBTRACT
-        case arrOperators[2]:
-            result = firstOperand - secondOperand
-            print(String(result), "SUBTRACT")
+        //DIVIDE && PERCENTAGE
+        case arrOperators.first:
+            result = firstOperand / secondOperand
+            print(String(result), "DIVIDE")
         //ADDITION
         case arrOperators[3]:
             result = firstOperand + secondOperand
             print(String(result), "ADD")
+        //SUBTRACT
+        case arrOperators[2]:
+            result = firstOperand - secondOperand
+            print(String(result), "SUBTRACT")
         default:
-            //PERCENT ONLY
+            //PERCENT
             if sender.titleLabel?.text == arrSymbols[3] {
                 result = firstOperand / 100
-                print(String(result), "PERCENT AT FIRST RUN")
             }
         }
         firstOperand = result
-        print("PERFORM OPERATION", secondOperand, result)
         return String(result)
+    }
+    
+    func negativeOperation (sender: UIButton) -> String {
+        //2 THE CODE CLEARS THE COLLECTED STRING in the %
+        if arrCollectedStrings.contains(arrOperators[2]) {
+            arrCollectedStrings.removeFirst()
+            print(" POSITIVE", arrCollectedStrings, negativeCount, sender.tag)
+        } else {
+            arrCollectedStrings.insert("-", at: 0)
+            print("NEGATIVE", arrCollectedStrings, negativeCount, sender.tag)
+
+        }
+    return arrCollectedStrings.joined()
     }
 }

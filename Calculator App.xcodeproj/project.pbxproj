@@ -14,6 +14,7 @@
 		84147D3B2276C01A001AA880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84147D392276C01A001AA880 /* LaunchScreen.storyboard */; };
 		84147D462276C01A001AA880 /* Calculator_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84147D452276C01A001AA880 /* Calculator_AppTests.swift */; };
 		84147D512276C01A001AA880 /* Calculator_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84147D502276C01A001AA880 /* Calculator_AppUITests.swift */; };
+		846297F42282B8B600F62BCF /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846297F32282B8B600F62BCF /* Operation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		84147D4C2276C01A001AA880 /* Calculator AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Calculator AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84147D502276C01A001AA880 /* Calculator_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator_AppUITests.swift; sourceTree = "<group>"; };
 		84147D522276C01A001AA880 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846297F32282B8B600F62BCF /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				84147D302276C017001AA880 /* AppDelegate.swift */,
 				84147D322276C017001AA880 /* ViewController.swift */,
+				846297F32282B8B600F62BCF /* Operation.swift */,
 				84147D342276C017001AA880 /* Main.storyboard */,
 				84147D372276C01A001AA880 /* Assets.xcassets */,
 				84147D392276C01A001AA880 /* LaunchScreen.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				84147D332276C017001AA880 /* ViewController.swift in Sources */,
 				84147D312276C017001AA880 /* AppDelegate.swift in Sources */,
+				846297F42282B8B600F62BCF /* Operation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
