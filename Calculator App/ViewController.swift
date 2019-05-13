@@ -82,11 +82,16 @@ class ViewController: UIViewController {
                 txtViewResult.text = ""
             } else {
                 //OPERATORS
-                if arrOperators.contains((sender.titleLabel?.text)!)  {
+                if arrOperators.contains((sender.titleLabel?.text)!) {
                     print(" OPERATOR",arrCollectedStrings, firstOperand)
 
                     firstOperand = operand(sender: sender, firstOpernd: !firstOperand.isZero ? firstOperand : Double(arrCollectedStrings.joined()) ?? firstOperand)
-                
+                    arrCollectedStrings.removeAll()
+                    if sender.tag == 1 {
+                        operatorValue = (sender.titleLabel?.text)!
+                        txtViewResult.text = performOperation(sender: sender)
+                    }
+         
                 //EQUALS
                 } else if sender.tag <= 2 && arrSymbols[1] == sender.titleLabel?.text  {
                     //ADD VALUE TO SECOND OPERAND
@@ -117,6 +122,9 @@ class ViewController: UIViewController {
                         arrCollectedStrings.append((sender.titleLabel?.text)!)
                     }
                     txtViewResult.text = arrCollectedStrings.joined()
+                    if !operatorValue.isEmpty {
+                        secondOperand = arrSymbols[3] == sender.titleLabel?.text ? percentValue : Double(arrCollectedStrings.joined()) ?? percentValue
+                    }
                 }
             }
         }
@@ -128,15 +136,12 @@ class ViewController: UIViewController {
             firstOperand = firstOpernd
             txtViewResult.text = String(firstOpernd)
             arrCollectedStrings.removeAll()
-            operatorValue = (sender.titleLabel?.text)!
             sender.tag = 1
         }
         return firstOpernd
     }
     
     func performOperation (sender: UIButton) -> String {
-        //ADD VALUE TO SECOND OPERAND
-        secondOperand = arrSymbols[3] == sender.titleLabel?.text ? percentValue : Double(arrCollectedStrings.joined()) ?? percentValue
         
         switch operatorValue {
         //MULTIPLY
