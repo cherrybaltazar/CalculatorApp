@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,21 +15,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="0" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="5Cp-7R-Y0S">
-                                <rect key="frame" x="0.0" y="44" width="414" height="242"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="198.66666666666666"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blW-AR-5e7">
-                                <rect key="frame" x="0.0" y="286" width="414" height="576"/>
+                                <rect key="frame" x="0.0" y="218.66666666666669" width="414" height="517.33333333333326"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqT-rl-UZb">
-                                        <rect key="frame" x="3" y="17.666666666666693" width="95.333333333333329" height="103.66666666666669"/>
+                                        <rect key="frame" x="3" y="11.666666666666686" width="95.333333333333329" height="93.333333333333329"/>
                                         <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="AC">
@@ -40,7 +40,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yws-CZ-7eV">
-                                        <rect key="frame" x="108.33333333333334" y="17.666666666666693" width="95.333333333333343" height="103.66666666666669"/>
+                                        <rect key="frame" x="108.33333333333334" y="11.666666666666686" width="95.333333333333343" height="93.333333333333329"/>
                                         <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="+/-">
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSk-uf-q3I">
-                                        <rect key="frame" x="213.66666666666663" y="17.666666666666693" width="95" height="103.66666666666669"/>
+                                        <rect key="frame" x="213.66666666666663" y="11.666666666666686" width="95" height="93.333333333333329"/>
                                         <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="%">
@@ -62,7 +62,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tml-nX-dqS">
-                                        <rect key="frame" x="318.66666666666669" y="17.666666666666693" width="95.333333333333314" height="103.66666666666669"/>
+                                        <rect key="frame" x="318.66666666666669" y="11.666666666666686" width="95.333333333333314" height="93.333333333333329"/>
                                         <color key="backgroundColor" red="0.98431372549019602" green="0.58039215686274503" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="/">
@@ -73,7 +73,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egI-zr-sUM">
-                                        <rect key="frame" x="318.66666666666669" y="472.33333333333343" width="95.333333333333314" height="103.66666666666669"/>
+                                        <rect key="frame" x="318.66666666666669" y="424.33333333333337" width="95.333333333333314" height="93"/>
                                         <color key="backgroundColor" red="0.98431372549019602" green="0.58039215686274503" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="=">
@@ -84,7 +84,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1V-lb-bwt">
-                                        <rect key="frame" x="213.66666666666663" y="471.33333333333343" width="95" height="103.66666666666669"/>
+                                        <rect key="frame" x="213.66666666666663" y="423.33333333333337" width="95" height="93"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title=".">
@@ -95,7 +95,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0y-lX-uJj">
-                                        <rect key="frame" x="3" y="472.33333333333343" width="201" height="103.66666666666669"/>
+                                        <rect key="frame" x="3" y="424.33333333333337" width="201" height="93"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="0">
@@ -106,7 +106,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYE-UU-9jF">
-                                        <rect key="frame" x="108.33333333333334" y="131.33333333333331" width="95.333333333333343" height="103.66666666666669"/>
+                                        <rect key="frame" x="108.33333333333334" y="115.00000000000003" width="95.333333333333343" height="93"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="8">
@@ -117,7 +117,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLU-UO-SQn">
-                                        <rect key="frame" x="318.66666666666669" y="131.33333333333331" width="95.333333333333314" height="103.66666666666669"/>
+                                        <rect key="frame" x="318.66666666666669" y="115.00000000000003" width="95.333333333333314" height="93"/>
                                         <color key="backgroundColor" red="0.98431372549019602" green="0.58039215686274503" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="x">
@@ -128,7 +128,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7k-hZ-eYK">
-                                        <rect key="frame" x="213.66666666666663" y="131.33333333333331" width="95" height="103.66666666666669"/>
+                                        <rect key="frame" x="213.66666666666663" y="115.00000000000003" width="95" height="93"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="9">
@@ -139,7 +139,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wc-6i-0gO">
-                                        <rect key="frame" x="3" y="131.33333333333331" width="95.333333333333329" height="103.66666666666669"/>
+                                        <rect key="frame" x="3" y="115.00000000000003" width="95.333333333333329" height="93"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="7">
@@ -150,7 +150,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddM-LX-ito" userLabel="6">
-                                        <rect key="frame" x="213.66666666666663" y="244.99999999999997" width="95" height="103.66666666666666"/>
+                                        <rect key="frame" x="213.66666666666663" y="218" width="95" height="93"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="6">
@@ -161,7 +161,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d01-VB-yMp" userLabel="-">
-                                        <rect key="frame" x="318.66666666666669" y="244.99999999999997" width="95.333333333333314" height="103.66666666666666"/>
+                                        <rect key="frame" x="318.66666666666669" y="218" width="95.333333333333314" height="93"/>
                                         <color key="backgroundColor" red="0.98431372549019602" green="0.58039215686274503" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="-">
@@ -172,7 +172,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt5-ke-PdF">
-                                        <rect key="frame" x="3" y="244.99999999999997" width="95.333333333333329" height="103.66666666666666"/>
+                                        <rect key="frame" x="3" y="218" width="95.333333333333329" height="93"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="4">
@@ -183,7 +183,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKM-cz-7HA" userLabel="5">
-                                        <rect key="frame" x="108.33333333333334" y="244.99999999999997" width="95.333333333333343" height="103.66666666666666"/>
+                                        <rect key="frame" x="108.33333333333334" y="218" width="95.333333333333343" height="93"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="5">
@@ -194,7 +194,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yle-Tw-iIK" userLabel="1">
-                                        <rect key="frame" x="3" y="358.66666666666663" width="95.333333333333329" height="103.66666666666669"/>
+                                        <rect key="frame" x="3" y="321" width="95.333333333333329" height="93.333333333333314"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="1">
@@ -205,7 +205,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5d-Pk-4Ei" userLabel="2">
-                                        <rect key="frame" x="108.33333333333334" y="358.66666666666663" width="95.333333333333343" height="103.66666666666669"/>
+                                        <rect key="frame" x="108.33333333333334" y="321" width="95.333333333333343" height="93.333333333333314"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="2">
@@ -216,7 +216,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFz-ZD-f7t" userLabel="3">
-                                        <rect key="frame" x="213.66666666666663" y="358.66666666666663" width="95" height="103.66666666666669"/>
+                                        <rect key="frame" x="213.66666666666663" y="321" width="95" height="93.333333333333314"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="3">
@@ -227,7 +227,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATP-us-ZVM">
-                                        <rect key="frame" x="318.66666666666669" y="358.66666666666663" width="95.333333333333314" height="103.66666666666669"/>
+                                        <rect key="frame" x="318.66666666666669" y="321" width="95.333333333333314" height="93.333333333333314"/>
                                         <color key="backgroundColor" red="0.98431372549019602" green="0.58039215686274503" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="+">
@@ -387,22 +387,12 @@
                         <outlet property="btnAdd" destination="ATP-us-ZVM" id="4pC-vG-8gh"/>
                         <outlet property="btnClear" destination="aqT-rl-UZb" id="FiQ-cI-7rH"/>
                         <outlet property="btnDivide" destination="Tml-nX-dqS" id="8NO-OD-3Fs"/>
-                        <outlet property="btnEight" destination="WYE-UU-9jF" id="qOk-ia-tHl"/>
                         <outlet property="btnEquals" destination="egI-zr-sUM" id="ZAP-PA-L5l"/>
-                        <outlet property="btnFive" destination="jKM-cz-7HA" id="qCg-Gy-eJL"/>
-                        <outlet property="btnFour" destination="Pt5-ke-PdF" id="BQ5-s7-9zx"/>
                         <outlet property="btnMultipy" destination="rLU-UO-SQn" id="8qr-Ml-6vk"/>
-                        <outlet property="btnNine" destination="V7k-hZ-eYK" id="u22-Cr-FWr"/>
-                        <outlet property="btnOne" destination="Yle-Tw-iIK" id="oCj-Rc-aLn"/>
                         <outlet property="btnPercent" destination="iSk-uf-q3I" id="UB3-dF-WEc"/>
                         <outlet property="btnPoint" destination="d1V-lb-bwt" id="wbc-Ka-fap"/>
                         <outlet property="btnPositiveNegativeIntegers" destination="Yws-CZ-7eV" id="5xI-Mj-AGe"/>
-                        <outlet property="btnSeven" destination="1wc-6i-0gO" id="ysk-zi-X0j"/>
-                        <outlet property="btnSix" destination="ddM-LX-ito" id="yKg-0W-LNS"/>
                         <outlet property="btnSubtract" destination="d01-VB-yMp" id="oXc-r1-mlN"/>
-                        <outlet property="btnThree" destination="oFz-ZD-f7t" id="lni-yo-rZz"/>
-                        <outlet property="btnTwo" destination="J5d-Pk-4Ei" id="6Zk-i7-QHT"/>
-                        <outlet property="btnZero" destination="K0y-lX-uJj" id="pTu-iO-wRY"/>
                         <outlet property="txtViewResult" destination="5Cp-7R-Y0S" id="Tua-tE-cEa"/>
                     </connections>
                 </viewController>
@@ -415,21 +405,21 @@
             <objects>
                 <viewController id="Zf4-Zt-sOs" customClass="ViewController" customModule="Calculator_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Fc-d2-1oT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XOh-4A-MjO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="224"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="184"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0on-Ct-VoN">
-                                <rect key="frame" x="0.0" y="268" width="414" height="594"/>
+                                <rect key="frame" x="0.0" y="204" width="414" height="532"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQM-hJ-xOW">
-                                        <rect key="frame" x="0.0" y="0.0" width="98.666666666666671" height="118.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="98.666666666666671" height="106.33333333333333"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="AC">
@@ -437,7 +427,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ONm-zi-jEB">
-                                        <rect key="frame" x="104.66666666666669" y="0.0" width="99" height="118.66666666666667"/>
+                                        <rect key="frame" x="104.66666666666669" y="0.0" width="99" height="106.33333333333333"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="+/-">
@@ -445,7 +435,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VF5-mU-zX4">
-                                        <rect key="frame" x="210.66666666666666" y="0.0" width="98.666666666666657" height="118.66666666666667"/>
+                                        <rect key="frame" x="210.66666666666666" y="0.0" width="98.666666666666657" height="106.33333333333333"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="%">
@@ -453,7 +443,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdw-tD-R6u">
-                                        <rect key="frame" x="315.33333333333331" y="0.0" width="98.666666666666686" height="118.66666666666667"/>
+                                        <rect key="frame" x="315.33333333333331" y="0.0" width="98.666666666666686" height="106.33333333333333"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="/">
@@ -461,7 +451,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7J-SS-LOZ">
-                                        <rect key="frame" x="0.0" y="122.66666666666669" width="98.666666666666671" height="119"/>
+                                        <rect key="frame" x="0.0" y="110.33333333333331" width="98.666666666666671" height="106.33333333333331"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="7">
@@ -469,7 +459,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ed-fr-wou">
-                                        <rect key="frame" x="95" y="122.66666666666669" width="89" height="119"/>
+                                        <rect key="frame" x="95" y="110.33333333333331" width="89" height="106.33333333333331"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="8">
@@ -486,7 +476,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WtJ-zR-6dD">
-                                        <rect key="frame" x="315.33333333333331" y="122.66666666666669" width="98.666666666666686" height="119"/>
+                                        <rect key="frame" x="315.33333333333331" y="110.33333333333331" width="98.666666666666686" height="106.33333333333331"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="x">
@@ -548,7 +538,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwg-1J-lRg">
-                                        <rect key="frame" x="315.33333333333331" y="482.33333333333343" width="98.666666666666686" height="111.66666666666669"/>
+                                        <rect key="frame" x="315.33333333333331" y="432.66666666666663" width="98.666666666666686" height="99.333333333333371"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="=">
@@ -565,7 +555,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rua-2o-fCh">
-                                        <rect key="frame" x="191" y="482.33333333333343" width="89" height="111.66666666666669"/>
+                                        <rect key="frame" x="191" y="432.66666666666663" width="89" height="99.333333333333371"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title=".">
@@ -573,7 +563,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKv-rI-G9h">
-                                        <rect key="frame" x="0.0" y="391" width="202.66666666666666" height="203"/>
+                                        <rect key="frame" x="0.0" y="391" width="202.66666666666666" height="141"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="0">
@@ -581,7 +571,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANh-5f-teg">
-                                        <rect key="frame" x="191" y="122.66666666666669" width="89" height="119"/>
+                                        <rect key="frame" x="191" y="110.33333333333331" width="89" height="106.33333333333331"/>
                                         <color key="backgroundColor" red="0.60784313729999995" green="0.60643005370000003" blue="0.60643005370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
                                         <state key="normal" title="9">
